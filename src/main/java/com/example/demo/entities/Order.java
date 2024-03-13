@@ -58,6 +58,10 @@ public class Order implements Serializable{
 		setOrderStatus(orderStatus);
 		this.client = client;
 	}
+	
+	public Double getTotal() {
+		return items.stream().mapToDouble(x -> x.getSubTotal()).sum();
+	}
 
 	public Long getId() {
 		return id;
